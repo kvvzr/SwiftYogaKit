@@ -40,6 +40,10 @@ extension UIView {
         return yoga != nil
     }
 
+    public func disableYoga() {
+        objc_setAssociatedObject(self, &kYGYogaAssociatedKey, nil, .OBJC_ASSOCIATION_RETAIN_NONATOMIC)
+    }
+
     #if os(macOS)
     var _swift_yoga_isFittingSize: Bool {
         get {
